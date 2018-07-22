@@ -68,6 +68,14 @@ var emptyArray4 = [];
 var unorder = document.getElementsByTagName("ul")[0];
 
 
+var btn = document.getElementById("data");
+btn.addEventListener('keypress', function enterKey(e){
+	if (e.keyCode == 13) {
+		moreList();
+	};
+}, false);
+
+
 function moreList() {
 	var value = document.getElementsByTagName("input")[0].value;
 
@@ -83,6 +91,8 @@ function moreList() {
 		newLi.innerText = emptyArray4[i];
 
 		unorder.appendChild(newLi);
+
+		document.getElementsByTagName("input")[0].value = "";
 	}
 
 
